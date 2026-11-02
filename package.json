@@ -1,0 +1,17 @@
+{
+  "name": "dsh-message-branch",
+  "version": "0.1.0",
+  "description": "Inline editing of text prompts into new DSH conversation branches (preview)",
+  "scripts": { "test": "node --test test/client.test.js test/lifecycle.test.js", "check": "node --check lib/client.js && node --check lib/index.js && node test-bundle.mjs" },
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": { ".": "./lib/index.js", "./client": "./lib/client.js", "./package.json": "./package.json" },
+  "files": ["lib", "cordis.patch.yml", "package.json", "README.md"],
+  "engines": { "node": ">=22.19.0" },
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": { "platform": "web" }
+  },
+  "peerDependencies": { "react": "^18.3.1" }
+}
